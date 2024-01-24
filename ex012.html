@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula12</title>
+    <style>
+        body{
+            background-color:aquamarine;
+            color: darkcyan;
+            font: normal 16pt Arial;
+
+        }
+    </style>
+    <h1>Você vota?</h1>
+    Digite sua idade: <input type="text" name="x" id="x">
+    <input type="button" value="Verificar" onclick="calcular()">
+    <div id="res"></div>
+</head>    
+<body>
+    <script>
+        var x = window.document.getElementById('x')
+        var res = window.document.getElementById('res')
+        function calcular(){
+            if(a<16){
+            a.innerHTML= 'não vota'
+        } else{
+            if(a <18 || a > 65) {
+                a.innerHTML ='voto opcional'
+            } else {
+             a.innerHTML='voto obrigatório'
+            }
+        }}
+    </script>
+</body>
+</html>

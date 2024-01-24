@@ -1,0 +1,24 @@
+body {
+    background-color: rgba(250, 133, 194, 0.734);
+    font: normal 15pt Arial;
+}
+header{
+    color:rgb(250, 235, 215);
+    border-radius: 5px;
+    text-align: center;
+}
+section{
+    background-color:rgb(250, 235, 215);
+    border-radius: 10px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.8)
+}
+select#ana {
+    width: 150px;
+}
+footer{
+    color: black;
+    text-align: center;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+    <style>
+        body{
+            background-color: rgb(164, 247, 82);
+            color:black;
+            font: normal 17pt Arial;
+        }
+        h1{
+            color:blue
+        }
+    </style>
+    <h1>Verdadeiro ou Falso</h1>
+    <p>Sua nacionalidade: <input type="text" name="nac" id="nac"></p>
+    <input type="button" value="Verificar" onclick="caucular()">
+    <div id="res"></div>
+</head>
+<body>
+    <script>
+        function calcular(){
+            var p = 'Brasileiro'
+            var nac = window.document.getElementById('nac') 
+           if(nac != p){
+            nac.innerHTML = 'Você é <strong>ESTRANGEIRO</strong>'
+           } else{
+            nac.innerHTML= 'Você é <strong>BRASILEIRO</strong>'
+           }
+        }
+    </script>
+</body>
+</html>
