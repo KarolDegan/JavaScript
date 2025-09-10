@@ -1,54 +1,29 @@
-import { Cliente } from "./Cliente.js";
+import { Conta } from "./Conta.js";
 
-export class ContaCorrente{
+
+export class ContaCorrente extends Conta{
     static numeroDeContas = 0;
-    agencia;
-    _cliente;
+    //agencia;
+    //_cliente;
    // #saldo =0 https://github.com/tc39/proposal-class-fields#private-fields
-   _saldo = 0;
+   //_saldo = 0; é mais adequado inicializar as variaveis dentro do construtor
     
 
-
-    set cliente(novoValor){
-        if(novoValor instanceof Cliente){
-            this._cliente = novoValor;
-        }
-    }
-
-    get cliente(){
-        return this._cliente;
-    }
-
-    get saldo(){
-        return this._saldo;
-    }
-
-    constructor(agencia, cliente){
-        this.agencia = agencia;
-        this.cliente = cliente;
+    constructor(cliente, agencia){
+        super(0,cliente,agencia);// super referencia a classe mãe
         ContaCorrente.numeroDeContas += 1;
     }
 
+    //super pode chamar outros métodos da classe sem ser o construtor
 
-    sacar(valor){
-        if(this._saldo >= valor){
-            this._saldo -= valor;
-            return valor;
-        }
+    teste(){
+        super.teste(); //se refere (executa) ao metodo teste da classe mãe
+        console.log("Teste na classe contaCorrente");
     }
 
-    depositar(valor){
-        if(valor <= 0)
-        {
-            return;
-        } 
-        this._saldo += valor;           
+    sacar(valor) {
+        let taxa =1.1;
+        return this._sacar(valor,taxa); // pode ser super.sacar()
     }
 
-    tranferir(valor, conta){
-        
-        const valorSacado = this.sacar(valor);
-        conta.depositar(valorSacado);
-        
-    }
 }
