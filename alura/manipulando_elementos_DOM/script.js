@@ -15,12 +15,14 @@ const somPausar = new Audio('./sons/pause.mp3');
 const somTerminar = new Audio ('./sons/beep.mp3');
 musica.loop = true;
 
-let tempoDecorridoSegundos = 5
+let tempoDecorridoSegundos = 1500
 const startPauseBt = document.querySelector('#start-pause');
 let intervaloId
 
 const iniciarPausarBt = document.querySelector('#start-pause span');
 const imagemBotao = document.querySelector('.app__card-primary-butto-icon');
+
+const tempoTela = document.querySelector('#timer');
 
 musicaBotao.addEventListener('change', () => {
     if(musica.paused){
@@ -36,22 +38,25 @@ musicaBotao.addEventListener('change', () => {
 });*/
 
 focoBt.addEventListener('click', () =>{
+    tempoDecorridoSegundos = 1500;
     alterarContexto('foco')
     focoBt.classList.add('active')
 });
 
 curtoBt.addEventListener('click', () => {
+    tempoDecorridoSegundos = 300;
     alterarContexto('descanso-curto')
     curtoBt.classList.add('active')
 });
 
 longoBt.addEventListener('click', () => {
+    tempoDecorridoSegundos = 900
     alterarContexto('descanso-longo')
     longoBt.classList.add('active')
 });
 
 function alterarContexto(contexto){
-
+    mostrarTempo()
     //Mundando o foco dos botões
     botoes.forEach(function(botao){
         botao.classList.remove('active')
@@ -81,13 +86,13 @@ function alterarContexto(contexto){
 
 const contagemRegressiva = () => {
     if(tempoDecorridoSegundos<=0){
-        //somTerminar.play();
+        somTerminar.play();
         alert('Tempo finalizado');
         zerar();
         return
     }
     tempoDecorridoSegundos-= 1;
-    console.log('Temporizador: ' + tempoDecorridoSegundos);
+    mostrarTempo();
 }
 
 startPauseBt.addEventListener('click', iniciarPausar);
@@ -110,3 +115,10 @@ function zerar(){
     iniciarPausarBt.textContent = "Começar";
     imagemBotao.setAttribute('src','/imagens/play_arrow.png');
 }
+
+function mostrarTempo(){
+    const tempo = new Date(tempoDecorridoSegundos * 1000);
+    const tempoFormatado = tempo.toLocaleTimeString('pt-br',{minute: '2-digit', second: '2-digit'})
+    tempoTela.innerHTML = `${tempoFormatado}`;
+}
+mostrarTempo();
