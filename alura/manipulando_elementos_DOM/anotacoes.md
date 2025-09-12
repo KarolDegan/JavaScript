@@ -50,7 +50,32 @@ tecla.onclick = function () {
 ### elemento.addEventListener(evento, callback)
 
 EVENTOS
+
 - click
 - submit
 - keydown, keyup, keypress
 - focus, blur
+
+## Aula 3
+
+### elemento.forEach
+
+- para listas de elementos como as retornadas pelo querySelectorAll
+- percorre cada elemento dentro da lista
+- espera receber uma função como argumento.
+- E essa função precisa de um argumento `elemento_array.forEach(function(elemento_singular)`
+
+### elemento.classList
+
+- pode `add` ou `remove` classes do elemento selecionado
+- `toggle` alternar classe : Se a classe já estiver presente no elemento, o método a remove; caso contrário, ele a adiciona
+- `contains` verificando se uma classe está presente
+- Manipula várias classes simultaneamente
+
+### Audios
+
+#### Controles básicos de áudio
+- play(): inicia a reprodução do áudio;
+- pause(): pausa a reprodução do áudio;
+- currentTime: propriedade que retorna ou define a posição atual de reprodução do áudio, em segundos;
+- volume: propriedade que retorna ou define o nível de volume do áudio, variando de 0 a 1.
