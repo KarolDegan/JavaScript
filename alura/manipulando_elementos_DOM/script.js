@@ -10,7 +10,17 @@ const botoes = document.querySelectorAll('.app__card-button');
 
 const musicaBotao =document.querySelector('#alternar-musica');
 const musica = new Audio('./sons/luna-rise-part-one.mp3');
+const somComecar = new Audio('./sons/play.wav');
+const somPausar = new Audio('./sons/pause.mp3');
+const somTerminar = new Audio ('./sons/beep.mp3');
 musica.loop = true;
+
+let tempoDecorridoSegundos = 5
+const startPauseBt = document.querySelector('#start-pause');
+let intervaloId
+
+const iniciarPausarBt = document.querySelector('#start-pause span');
+const imagemBotao = document.querySelector('.app__card-primary-butto-icon');
 
 musicaBotao.addEventListener('change', () => {
     if(musica.paused){
@@ -67,4 +77,36 @@ function alterarContexto(contexto){
         default:
             break;
     }
+}
+
+const contagemRegressiva = () => {
+    if(tempoDecorridoSegundos<=0){
+        //somTerminar.play();
+        alert('Tempo finalizado');
+        zerar();
+        return
+    }
+    tempoDecorridoSegundos-= 1;
+    console.log('Temporizador: ' + tempoDecorridoSegundos);
+}
+
+startPauseBt.addEventListener('click', iniciarPausar);
+
+function iniciarPausar(){
+    if(intervaloId){
+        somPausar.play();
+        zerar()
+        return
+    }
+    somComecar.play();
+    intervaloId = setInterval(contagemRegressiva, 1000); // executa a função a cada 1segundo
+    iniciarPausarBt.textContent = "Pausar";
+    imagemBotao.setAttribute('src','/imagens/pause.png');
+}
+
+function zerar(){
+    clearInterval(intervaloId); //interrompe a execução de algum código
+    intervaloId = null;
+    iniciarPausarBt.textContent = "Começar";
+    imagemBotao.setAttribute('src','/imagens/play_arrow.png');
 }

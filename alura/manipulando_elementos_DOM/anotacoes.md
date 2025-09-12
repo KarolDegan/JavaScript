@@ -79,3 +79,8 @@ EVENTOS
 - pause(): pausa a reprodução do áudio;
 - currentTime: propriedade que retorna ou define a posição atual de reprodução do áudio, em segundos;
 - volume: propriedade que retorna ou define o nível de volume do áudio, variando de 0 a 1.
+
+## Aula 4
+
+- SetInterval
+- ClearInterval
