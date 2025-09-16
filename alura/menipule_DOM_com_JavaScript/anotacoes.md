@@ -43,3 +43,17 @@ Este método substitui um nó existente por um novo nó.
 #### removeChild(no)
 
 Este método remove um nó filho de seu nó pai.
+
+## Aula 4
+
+### selecionar o elemento pai
+
+.parentElement
+
+### evento.target
+
+se refere ao elemento HTML que disparou o evento
+
+### IIFE - função de execução imediata
+
+colocar todo o arquivo dentro de uma função de execução imediata
