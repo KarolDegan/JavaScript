@@ -21,4 +21,25 @@ No caso do formulário, que a resposta seja enviada imediatamente para o servido
 
 - passagem de valor por copia, não por referencia, porque essa propriedade contém um valor do tipo string.
 - e strings são sempre passadas por copia no js
-  
+
+## Aula 3
+
+### adicionando elemento no dom createElement
+
+```js
+const tarefa = document.createElement('li'); //cria
+tarefa.classList.add('task');
+lista.appendChild(tarefa); // coloca na arvore DOM sempre por último
+```
+
+#### insertBefore(novoNo, noDeReferencia)
+
+Este método insere um novo nó antes de um nó de referência específico.
+
+#### replaceChild(novoNo, noAntigo)
+
+Este método substitui um nó existente por um novo nó.
+
+#### removeChild(no)
+
+Este método remove um nó filho de seu nó pai.
