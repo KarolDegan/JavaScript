@@ -1,12 +1,17 @@
 # consumindo e tratando dados da api
 
+##
+
 ### API
+
 Uma API (Interface de Programação de Aplicações) é um conjunto de regras e protocolos que permite que diferentes softwares se comuniquem e troquem informações entre si.
 
 ### requisições HTTP
 
 ## Aula 2
+
 Fazendo requisições HTTP
+
 ### instalar o json server
 
 ### fetch
@@ -39,7 +44,7 @@ evitar a grande quantidade de .then sequenciais (callback)
 
 ## Aula 4
 
-### objeto.style.atributo = "";
+### objeto.style.atributo = ""
 
 video.style.display
 
