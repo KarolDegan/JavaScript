@@ -2,7 +2,7 @@
 
 ## Aula 1
 
-A variável data-contexto em um elemento <button> é um exemplo de um atributo de dado (data attribute) em HTML. Atributos de dados são usados para armazenar informações personalizadas e privadas em elementos HTML padrão, permitindo que você associe dados extras a elementos sem precisar usar atributos não-padrão, classes ou outras construções.
+A variável data-contexto em um elemento `<button>` é um exemplo de um atributo de dado (data attribute) em HTML. Atributos de dados são usados para armazenar informações personalizadas e privadas em elementos HTML padrão, permitindo que você associe dados extras a elementos sem precisar usar atributos não-padrão, classes ou outras construções.
 
 No caso de `[data-contexto="descanso-longo "]`, o seletor está buscando todos os elementos HTML que possuem o atributo data-contexto com o valor exatamente igual a "descanso-longo".
 
@@ -75,6 +75,7 @@ EVENTOS
 ### Audios
 
 #### Controles básicos de áudio
+
 - play(): inicia a reprodução do áudio;
 - pause(): pausa a reprodução do áudio;
 - currentTime: propriedade que retorna ou define a posição atual de reprodução do áudio, em segundos;
