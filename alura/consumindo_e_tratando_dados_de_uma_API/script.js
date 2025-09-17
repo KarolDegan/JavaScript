@@ -41,6 +41,8 @@ function filtrarPesquisa() {
 
   videos.forEach((video) => {
     const titulo = video.querySelector('.titulo-video').textContent.toLowerCase();
+    //const kdakda = video.titulo.toLowerCase();
+    console.log(titulo);
 
     video.style.display = valorFiltro ? titulo.includes(valorFiltro) ? 'block' : 'none' : 'block';
   });
@@ -50,15 +52,15 @@ const botaoCategoria = document.querySelectorAll(".superior__item");
 
 botaoCategoria.forEach((botao) => {
     let nomeCategoria = botao.getAttribute("name");
-    console.log(nomeCategoria);
+    //console.log(nomeCategoria);
     botao.addEventListener("click", () => filtrarPorCategoria(nomeCategoria));
 })
 
 function filtrarPorCategoria(filtro){
     const videos = document.querySelectorAll(".videos__item");
-    for(let video of videos){
-        let categoria = video.querySelector(".categoria").textContent.toLowerCase();
-        let valorFiltro = filtro.toLowerCase();
+    for(let video of videos){  //outra forma sem ser o forEach, dá para usar o break, return e continue
+        let categoria = video.querySelector(".categoria").textContent.toLowerCase();  // é possivel usar o querySelector sem ser no document
+        let valorFiltro = filtro.toLowerCase();             //textContent extrair o texto contido dentro de um elemento HTML.
 
         if(!categoria.includes(valorFiltro) && valorFiltro != 'tudo'){
             video.style.display = "none";

@@ -36,3 +36,17 @@ para capturar erros especificamente
 ### async await (espera assíncrona)
 
 evitar a grande quantidade de .then sequenciais (callback)
+
+## Aula 4
+
+### objeto.style.atributo = "";
+
+video.style.display
+
+### titulo.**includes**(valorFiltro)
+
+Ele verifica se a string titulo contém a substring valorFiltro.
+
+### getAttribute
+
+pega um atributo dentro da tag
