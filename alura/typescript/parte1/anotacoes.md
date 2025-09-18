@@ -34,3 +34,13 @@ o g diz que são todas as ocorrencias do "-"
 - `match()`: Retorna um array com as correspondências encontradas na string.
 - `search()`: Retorna o índice da primeira correspondência encontrada na string.
 - `split()`: Divide uma string em um array de substrings, usando a expressão regular como delimitador.
+
+## Aula 4
+
+### Spread Operator
+
+`[...lista]`
+criar uma nova array contendo todos os elementos da array
+no contexto da aula usado para retornar uma cópia da lista de negociações, em vez de retornar a própria lista original.
+
+Mas no Typescript posso usar o `ReadonlyArray<>`
