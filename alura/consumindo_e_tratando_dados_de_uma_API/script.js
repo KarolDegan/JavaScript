@@ -30,7 +30,7 @@ async function buscarMostrarVidoes() {
     }
 }
 
-buscarMostrarVidoes();
+buscarMostrarVidoes(console.log("buscarMostrarVidoes rodando de novo!"));
 
 
 const barraPesquisa = document.querySelector(".pesquisar__input");
@@ -47,24 +47,22 @@ function filtrarPesquisa() {
   });
 }
 
+
+
 const botaoCategoria = document.querySelectorAll(".superior__item");
 
 botaoCategoria.forEach((botao) => {
     let nomeCategoria = botao.getAttribute("name");
-    //console.log(nomeCategoria);
-    botao.addEventListener("click", () => {
-        console.log(botao);
-        botao.style.backgroundColor = "#1875E9";
-        filtrarPorCategoria(nomeCategoria);
-    });
+    botao.addEventListener("click", () => filtrarPorCategoria(nomeCategoria));
 })
 
 function filtrarPorCategoria(filtro){
     const videos = document.querySelectorAll(".videos__item");
+    console.log(`os videos estão aqui ${videos}`);
     for(let video of videos){  //outra forma sem ser o forEach, dá para usar o break, return e continue
         let categoria = video.querySelector(".categoria").textContent.toLowerCase();  // é possivel usar o querySelector sem ser no document
         let valorFiltro = filtro.toLowerCase();             //textContent extrair o texto contido dentro de um elemento HTML.
-        
+        console.log(`a categoria é: ${valorFiltro}`);
         if(!categoria.includes(valorFiltro) && valorFiltro != 'tudo'){
             video.style.display = "none";
         } else {
@@ -72,5 +70,9 @@ function filtrarPorCategoria(filtro){
         }
     }
 }
+
+
+
+
 
 
