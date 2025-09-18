@@ -44,3 +44,10 @@ criar uma nova array contendo todos os elementos da array
 no contexto da aula usado para retornar uma cópia da lista de negociações, em vez de retornar a própria lista original.
 
 Mas no Typescript posso usar o `ReadonlyArray<>`
+
+## Aula 5
+
+### readonly
+
+- O readonly garante que, uma vez que a propriedade é inicializada no construtor, ela não pode ser modificada fora dele.
+- usar readonly simplifica o código porque você não precisa criar getters para propriedades que só precisam ser lidas.
