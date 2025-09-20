@@ -23,4 +23,15 @@ export class Negociacao {
     get volume(): number {
         return this.quantidade * this.valor;
     }
+
+    public static criaDe(dataString: string, quantidadeString: string, valorString: string): Negociacao{
+        const exp = /-/g; // expressão regular para trocar o - por , no input data
+        const date = new Date(dataString.replace(exp, ','));
+
+        const quantidade = parseInt(quantidadeString);
+
+        const valor = parseFloat(valorString);
+
+        return new Negociacao(date, quantidade, valor);
+    }
 }
