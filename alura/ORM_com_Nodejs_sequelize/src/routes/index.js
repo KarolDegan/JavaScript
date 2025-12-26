@@ -8,6 +8,6 @@ module.exports = app =>{
         express.json(), //converter para json o que chega como string
         pessoas,
         categorias,
-        cursos
+        cursos,
     );
 }

@@ -5,7 +5,9 @@ class Controller {
 
   async pegaTodos(req, res) {
     try {
+      console.log(this.entidadeService)
       const listaDeRegistro = await this.entidadeService.pegaTodosOsRegistros();
+      console.log(listaDeRegistro)
       return res.status(200).json(listaDeRegistro);
     } catch (erro) {
       // erro
