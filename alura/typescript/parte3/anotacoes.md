@@ -28,3 +28,15 @@ this é o contexto de execução de uma função.
 Em decorators, é crucial garantir que this esteja corretamente definido para que o método original possa acessar os membros da classe.
 
 .apply(this, args) permite definir explicitamente o valor de this ao chamar uma função, garantindo que o método original seja executado no contexto correto.
+
+## Aula 3
+
+### Object.defineProperty
+
+é uma ferramenta poderosa em JavaScript que permite definir ou modificar propriedades de um objeto de forma precisa.
+
+`Object.defineProperty(obj, prop, descriptor)`
+
+- **obj**: O objeto no qual você quer definir ou modificar a propriedade.
+- **prop**: O nome da propriedade que você quer definir ou modificar.
+- **descriptor**: Um objeto que descreve as características da propriedade (valor, se é gravável, se é enumerável, etc.).

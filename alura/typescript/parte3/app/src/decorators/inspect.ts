@@ -1,9 +1,10 @@
 //export function inspect(){ não precisa dessa função de fora se não for receber parametro
 export function inspect(
-        type: any,
+        target: any,
         propertyKey: string,
         descriptor: PropertyDescriptor
     ){
+        
         const metodoOriginal = descriptor.value;
         descriptor.value = function(...args: Array<any>){
             console.log(`---Método: ${propertyKey}`);

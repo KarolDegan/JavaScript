@@ -1,4 +1,4 @@
-export function inspect(type, propertyKey, descriptor) {
+export function inspect(target, propertyKey, descriptor) {
     const metodoOriginal = descriptor.value;
     descriptor.value = function (...args) {
         console.log(`---Método: ${propertyKey}`);
